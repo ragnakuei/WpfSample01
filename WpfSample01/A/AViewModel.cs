@@ -7,6 +7,7 @@ using WpfSample01.C;
 using WpfSample01.D;
 using WpfSample01.E;
 using WpfSample01.F;
+using WpfSample01.G;
 using WpfSample01.Models;
 
 namespace WpfSample01.A
@@ -38,6 +39,7 @@ namespace WpfSample01.A
             OpenDViewCommand = new DelegateCommand(OpenDViewCommandExecute, OpenDViewCommandCanEnable);
             OpenEViewCommand = new DelegateCommand(OpenEViewCommandExecute, OpenEViewCommandCanEnable);
             OpenFViewCommand = new DelegateCommand(OpenFViewCommandExecute, OpenFViewCommandCanEnable);
+            OpenGViewCommand = new DelegateCommand(OpenGViewCommandExecute, OpenGViewCommandCanEnable);
         }
 
         #region BView - 在關閉時統一更新值
@@ -145,6 +147,25 @@ namespace WpfSample01.A
         }
 
         private bool OpenFViewCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+        
+        #region GView - OnInitialize
+
+        public ICommand OpenGViewCommand { get; set; }
+
+        private GView _gView;
+
+        private void OpenGViewCommandExecute()
+        {
+            _gView = new GView();
+            _gView.Show();
+        }
+
+        private bool OpenGViewCommandCanEnable()
         {
             return true;
         }

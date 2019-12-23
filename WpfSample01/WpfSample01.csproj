@@ -100,6 +100,7 @@
     <Page Include="E\EView.xaml" />
     <Page Include="E\SubUserControl\ESubUserControl1.xaml" />
     <Page Include="F\FView.xaml" />
+    <Page Include="G\GView.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +138,10 @@
       <DependentUpon>FView.xaml</DependentUpon>
     </Compile>
     <Compile Include="F\FViewModel.cs" />
+    <Compile Include="G\GView.xaml.cs">
+      <DependentUpon>GView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="G\GViewModel.cs" />
     <Compile Include="Helpers\SvgHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -144,6 +149,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Models\ValueChangeEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -24,10 +24,11 @@ namespace WpfSample01.E.SubUserControl
 
         #region Property
 
+        private string _userName;
         public string UserName
         {
-            get => GetValue<string>();
-            set => SetValue(value);
+            get => _userName;
+            set => SetValue(ref _userName, value);
         }
 
         #endregion

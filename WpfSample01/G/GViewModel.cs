@@ -11,10 +11,11 @@ namespace WpfSample01.G
             OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
         }
 
+        private string _labelValue;
         public string LabelValue
         {
-            get => GetValue<string>();
-            set => SetValue(value);
+            get => _labelValue;
+            set => SetValue(ref _labelValue, value);
         }
 
         #region View Related Event

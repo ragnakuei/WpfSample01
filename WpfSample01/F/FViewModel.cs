@@ -21,25 +21,21 @@ namespace WpfSample01.F
             get => (_currentWindowService as CurrentWindowService)?.ActualWindow as FView;
         }
 
-        private double _axisX;
-
         public double AxisX
         {
-            get => _axisX;
-            set => SetProperty<double>(ref _axisX, value, nameof(AxisX));
+            get => GetValue<double>();
+            set => SetValue(value);
         }
-
-        private double _axisY;
 
         public double AxisY
         {
-            get => _axisY;
-            set => SetProperty<double>(ref _axisY, value, nameof(AxisY));
+            get => GetValue<double>();
+            set => SetValue(value);
         }
 
         #region View Related Event
 
-        public ICommand OnLoadedCommand { get; private set; }
+        public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {

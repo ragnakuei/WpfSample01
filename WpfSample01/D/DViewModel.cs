@@ -45,7 +45,7 @@ namespace WpfSample01.D
 
         #region View Related Event
 
-        public ICommand OnLoadedCommand { get; private set; }
+        public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {

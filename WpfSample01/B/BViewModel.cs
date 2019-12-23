@@ -36,12 +36,5 @@ namespace WpfSample01.B
         {
             return true;
         }
-
-        public event EventHandler<EventArgs> ValueChange;
-
-        protected virtual void OnValueChange(EventArgs e)
-        {
-            ValueChange?.Invoke(this, e);
-        }
     }
 }

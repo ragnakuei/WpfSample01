@@ -27,7 +27,7 @@ namespace WpfSample01.E
 
         #region View Related Event
 
-        public ICommand OnLoadedCommand { get; private set; }
+        public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {
@@ -43,7 +43,7 @@ namespace WpfSample01.E
             return true;
         }
 
-        public ICommand<string> TextBoxInputCommand { get; private set; }
+        public ICommand<string> TextBoxInputCommand { get; }
 
         private void TextBoxInputCommandExecute(string value)
         {

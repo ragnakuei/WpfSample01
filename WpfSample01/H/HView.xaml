@@ -20,11 +20,11 @@
     <StackPanel Orientation="Vertical" Name="LayoutRoot">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="MainView: "/>
-            <Button Content="Show Message" Command="{Binding ShowMessageCommand}"/>
+            <Button Content="Show Message" Command="{Binding ShowMessageCommand}" Width="208"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="ChildView: " />
-            <hChildView:HChildView dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
+            <hChildView:HChildView dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" Width="208" Height="259" />
         </StackPanel>
     </StackPanel>
 </Window>

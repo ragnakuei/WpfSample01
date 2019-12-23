@@ -1,6 +1,5 @@
 ﻿using System.Windows.Input;
 using DevExpress.Mvvm;
-using DevExpress.Mvvm.UI;
 
 namespace WpfSample01.H
 {
@@ -9,7 +8,7 @@ namespace WpfSample01.H
         public HViewModel()
         {
             ShowMessageCommand = new DelegateCommand(ShowMessage);
-            OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
+            OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute);
         }
 
         private ICurrentWindowService _currentWindowService
@@ -17,23 +16,21 @@ namespace WpfSample01.H
             get => GetService<ICurrentWindowService>();
         }
 
-        IMessageBoxService MessageBoxService { get { return GetService<IMessageBoxService>(); } }
+        IMessageBoxService MessageBoxService
+        {
+            get => GetService<IMessageBoxService>();
+        }
         
         #region View Related Event
 
-        public ICommand OnLoadedCommand { get; private set; }
+        public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {
             // MessageBox.Show("OnLoad");
         }
-
-        private bool OnLoadedCommandCanEnable()
-        {
-            return true;
-        }
-
-        public ICommand ShowMessageCommand { get; private set; }
+        
+        public ICommand ShowMessageCommand { get; }
         
         void ShowMessage() {
             

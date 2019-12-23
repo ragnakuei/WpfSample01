@@ -1,6 +1,5 @@
 ﻿using System.Windows.Input;
 using DevExpress.Mvvm;
-using DevExpress.Mvvm.UI;
 
 namespace WpfSample01.H.HChildView
 {

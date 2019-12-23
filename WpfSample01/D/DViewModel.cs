@@ -4,7 +4,9 @@ using System.Windows;
 using System.Windows.Input;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.UI;
+using DevExpress.Xpf.Diagram;
 using WpfSample01.CustomControls;
+using WpfSample01.Helpers;
 
 namespace WpfSample01.D
 {
@@ -20,11 +22,23 @@ namespace WpfSample01.D
             get => GetService<ICurrentWindowService>();
         }
 
-        private DView _viewClass
+        private DView ViewClass
         {
             get => (_currentWindowService as CurrentWindowService)?.ActualWindow as DView;
         }
 
+        private void AddDiagramControl(string svgFilePath)
+        {
+            var diagram = new DiagramImage
+                          {
+                              Image = SvgHelper.FromFilePathToImageSource(svgFilePath),
+                              Width = 100,
+                              Height = 200
+                          };
+
+            ViewClass.diagramLayout.Items.Add(diagram);
+        }
+        
         #region View Related Member
 
         private DragDropSvgImage _image1;
@@ -43,7 +57,7 @@ namespace WpfSample01.D
                                            "NoteBook 1.svg"
                                           );
 
-            _image1 = new DragDropSvgImage(_viewClass.canvasLayout, svgFilePath)
+            _image1 = new DragDropSvgImage(ViewClass.canvasLayout, svgFilePath)
                       {
                           Width = 100,
                           Margin = new Thickness
@@ -52,6 +66,13 @@ namespace WpfSample01.D
                                        Top = 0
                                    }
                       };
+            
+            var svgFilePath2 = Path.Combine(
+                                            System.AppDomain.CurrentDomain.BaseDirectory,
+                                            "Images",
+                                            "NoteBook 2.svg"
+                                           );
+            AddDiagramControl(svgFilePath2);
         }
 
         private bool OnLoadedCommandCanEnable()

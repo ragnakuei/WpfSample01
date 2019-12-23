@@ -14,11 +14,11 @@
     </dxmvvm:Interaction.Behaviors>
     <StackPanel>
         <Label Content="AView" />
-        <Button Content="Single Button Window" Command="{Binding OpenBViewCommand}" />
-        <Button Content="Dual Button Window" Command="{Binding OpenCViewCommand}" />
-        <Button Content="DragDrop Window" Command="{Binding OpenDViewCommand}" />
-        <Button Content="UserControl" Command="{Binding OpenEViewCommand}" />
-        <Button Content="Custom Behavior" Command="{Binding OpenFViewCommand}" />
+        <Button Content="B - Single Button Window" Command="{Binding OpenBViewCommand}" />
+        <Button Content="C - Dual Button Window" Command="{Binding OpenCViewCommand}" />
+        <Button Content="D - DragDrop Window" Command="{Binding OpenDViewCommand}" />
+        <Button Content="E - UserControl" Command="{Binding OpenEViewCommand}" />
+        <Button Content="F - Custom Behavior" Command="{Binding OpenFViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

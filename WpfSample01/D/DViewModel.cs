@@ -41,8 +41,6 @@ namespace WpfSample01.D
         
         #region View Related Member
 
-        private DragDropSvgImage _image1;
-
         #endregion
 
         #region View Related Event
@@ -57,7 +55,7 @@ namespace WpfSample01.D
                                            "NoteBook 1.svg"
                                           );
 
-            _image1 = new DragDropSvgImage(ViewClass.canvasLayout, svgFilePath)
+            new DragDropSvgImage(ViewClass.canvasLayout, svgFilePath)
                       {
                           Width = 100,
                           Margin = new Thickness

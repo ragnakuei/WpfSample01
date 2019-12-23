@@ -10,7 +10,6 @@ namespace WpfSample01.E.SubUserControl
         public ESubUserControl1ViewModel()
         {
             OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
-            ButtonClickCommand = new DelegateCommand(ButtonClickCommandExecute, ButtonClickCommandCanEnable);
         }
 
         private ICurrentWindowService _currentWindowService
@@ -45,18 +44,6 @@ namespace WpfSample01.E.SubUserControl
         }
 
         private bool OnLoadedCommandCanEnable()
-        {
-            return true;
-        }
-
-        public ICommand ButtonClickCommand { get; private set; }
-
-        private void ButtonClickCommandExecute()
-        {
-            MessageBox.Show("Test");
-        }
-
-        private bool ButtonClickCommandCanEnable()
         {
             return true;
         }

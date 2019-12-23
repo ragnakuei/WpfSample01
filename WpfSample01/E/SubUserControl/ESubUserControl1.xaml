@@ -18,6 +18,5 @@
         <Label>EUserControl</Label>
         <Label Content="在上述的 Textbox 中按下 Enter 後，會將其內容顯示至下面" />
         <Label Content="{Binding UserName}" />
-        <Button Content="Click" Command="{Binding ButtonClickCommand}" />
     </StackPanel>
 </UserControl>

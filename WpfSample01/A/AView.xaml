@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WpfSample01.A.AView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:a="clr-namespace:WpfSample01.A"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <a:AViewModel />
+    </UserControl.DataContext>
+    <dxmvvm:Interaction.Behaviors>
+        <a:AService />
+    </dxmvvm:Interaction.Behaviors>
+    <StackPanel>
+        <Label Content="AView" />
+        <Button Content="Single Button Window" Command="{Binding OpenBViewCommand}" />
+        <Button Content="Dual Button Window" Command="{Binding OpenCViewCommand}" />
+        <Button Content="DragDrop Window" Command="{Binding OpenDViewCommand}" />
+        <Button Content="UserControl" Command="{Binding OpenEViewCommand}" />
+        <Button Content="Custom Behavior" Command="{Binding OpenFViewCommand}" />
+        <Label Content="{Binding LabelResult}" />
+    </StackPanel>
+</UserControl>

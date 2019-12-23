@@ -84,6 +84,14 @@
     <Compile Include="A\AView.xaml.cs">
       <DependentUpon>AView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
+      <DependentUpon>HView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSample\ViewSampleView.xaml.cs">
+      <DependentUpon>HView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildViewModel.cs" />
+    <Compile Include="ViewSample\ViewSampleViewModel.cs" />
     <Page Include="A\AView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +109,8 @@
     <Page Include="E\SubUserControl\ESubUserControl1.xaml" />
     <Page Include="F\FView.xaml" />
     <Page Include="G\GView.xaml" />
+    <Page Include="H\HChildView\HChildView.xaml" />
+    <Page Include="H\HView.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,10 +153,20 @@
     </Compile>
     <Compile Include="G\GViewModel.cs" />
     <Compile Include="Helpers\SvgHelper.cs" />
+    <Compile Include="H\HChildView\HChildView.xaml.cs">
+      <DependentUpon>HChildView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="H\HChildView\HChildViewModel.cs" />
+    <Compile Include="H\HView.xaml.cs">
+      <DependentUpon>HView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="H\HViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
+    <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />

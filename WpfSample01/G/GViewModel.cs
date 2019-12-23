@@ -1,7 +1,5 @@
 ﻿using System.Windows.Input;
 using DevExpress.Mvvm;
-using DevExpress.Mvvm.UI;
-using WpfSample01.F;
 
 namespace WpfSample01.G
 {
@@ -12,17 +10,6 @@ namespace WpfSample01.G
         {
             OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
         }
-
-        private ICurrentWindowService _currentWindowService
-        {
-            get => GetService<ICurrentWindowService>();
-        }
-
-        public FView ViewClass
-        {
-            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as FView;
-        }
-
 
         private string _labelValue;
         public string LabelValue

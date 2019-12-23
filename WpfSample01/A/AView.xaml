@@ -20,6 +20,7 @@
         <Button Content="E - UserControl" Command="{Binding OpenEViewCommand}" />
         <Button Content="F - Custom Behavior" Command="{Binding OpenFViewCommand}" />
         <Button Content="G - OnInitialize" Command="{Binding OpenGViewCommand}" />
+        <Button Content="H - OnParentViewModelChanged" Command="{Binding OpenHViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

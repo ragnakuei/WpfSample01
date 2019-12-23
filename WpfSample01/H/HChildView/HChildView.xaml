@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WpfSample01.H.HChildView.HChildView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfSample01.H.HChildView"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             mc:Ignorable="d"
+             Height="450" Width="800">
+    <UserControl.DataContext>
+        <local:HChildViewModel />
+    </UserControl.DataContext>
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding OnLoadedCommand}" />
+    </dxmvvm:Interaction.Behaviors>
+    <StackPanel>
+        <Button Content="ChildView: Show Message" Command="{Binding ShowMessageCommand}"/>
+    </StackPanel>
+</UserControl>

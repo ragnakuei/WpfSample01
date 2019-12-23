@@ -1,0 +1,54 @@
+﻿using System.Windows.Input;
+using DevExpress.Mvvm;
+using DevExpress.Mvvm.UI;
+
+namespace WpfApp3.F
+{
+    public class FViewModel : ViewModelBase
+    {
+        public FViewModel()
+        {
+            OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
+        }
+
+        private ICurrentWindowService _currentWindowService
+        {
+            get => GetService<ICurrentWindowService>();
+        }
+
+        public FView ViewClass
+        {
+            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as FView;
+        }
+
+        private double _axisX;
+        public double AxisX
+        {
+            get => _axisX;
+            set => SetProperty<double>(ref _axisX, value, nameof(AxisX));
+        }
+
+        private double _axisY;
+        public double AxisY
+        {
+            get => _axisY;
+            set => SetProperty<double>(ref _axisY, value, nameof(AxisY));
+        }
+
+        #region View Related Event
+
+        public ICommand OnLoadedCommand { get; private set; }
+
+        private void OnLoadedCommandExecute()
+        {
+            // MessageBox.Show("OnLoad");
+        }
+
+        private bool OnLoadedCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+    }
+}

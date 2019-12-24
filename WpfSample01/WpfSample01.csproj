@@ -84,6 +84,20 @@
     <Compile Include="A\AView.xaml.cs">
       <DependentUpon>AView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\NewValueEventArgs.cs" />
+    <Compile Include="Helpers\DataContextHelper.cs" />
+    <Compile Include="I\IChildView\IChildAView.xaml.cs">
+      <DependentUpon>IChildAView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="I\IChildView\IChildAViewModel.cs" />
+    <Compile Include="I\IChildView\IChildBView.xaml.cs">
+      <DependentUpon>IChildBView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="I\IChildView\IChildBViewModel.cs" />
+    <Compile Include="I\IView.xaml.cs">
+      <DependentUpon>IView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="I\IViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -109,8 +123,11 @@
     <Page Include="E\SubUserControl\ESubUserControl1.xaml" />
     <Page Include="F\FView.xaml" />
     <Page Include="G\GView.xaml" />
-    <Page Include="H\HChildView\HChildView.xaml" />
     <Page Include="H\HView.xaml" />
+    <Page Include="H\HChildView\HChildView.xaml" />
+    <Page Include="I\IChildView\IChildAView.xaml" />
+    <Page Include="I\IChildView\IChildBView.xaml" />
+    <Page Include="I\IView.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

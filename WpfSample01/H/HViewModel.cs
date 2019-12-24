@@ -16,7 +16,7 @@ namespace WpfSample01.H
             get => GetService<ICurrentWindowService>();
         }
 
-        IMessageBoxService MessageBoxService
+        private IMessageBoxService MessageBoxService
         {
             get => GetService<IMessageBoxService>();
         }

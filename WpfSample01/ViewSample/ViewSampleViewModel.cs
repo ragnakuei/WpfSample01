@@ -17,14 +17,14 @@ namespace WpfSample01.ViewSample
             get => GetService<ICurrentWindowService>();
         }
 
-        public ViewSampleView ViewClass
+        public I.IView ViewClass
         {
-            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as ViewSampleView;
+            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as I.IView;
         }
 
         #region View Related Event
 
-        public ICommand OnLoadedCommand { get; private set; }
+        public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {

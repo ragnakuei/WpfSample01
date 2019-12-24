@@ -9,6 +9,7 @@ using WpfSample01.E;
 using WpfSample01.F;
 using WpfSample01.G;
 using WpfSample01.H;
+using WpfSample01.I;
 using WpfSample01.Models;
 
 namespace WpfSample01.A
@@ -42,6 +43,7 @@ namespace WpfSample01.A
             OpenFViewCommand = new DelegateCommand(OpenFViewCommandExecute, OpenFViewCommandCanEnable);
             OpenGViewCommand = new DelegateCommand(OpenGViewCommandExecute, OpenGViewCommandCanEnable);
             OpenHViewCommand = new DelegateCommand(OpenHViewCommandExecute, OpenHViewCommandCanEnable);
+            OpenIViewCommand = new DelegateCommand(OpenIViewCommandExecute, OpenIViewCommandCanEnable);
         }
 
         #region BView - 在關閉時統一更新值
@@ -97,7 +99,7 @@ namespace WpfSample01.A
 
         #endregion
 
-        #region DView - SVG
+        #region DView - DragDrop SVG
 
         public ICommand OpenDViewCommand { get; set; }
 
@@ -117,7 +119,7 @@ namespace WpfSample01.A
 
         #endregion
 
-        #region EView - 嘗試將值傳入 UserControl 中
+        #region EView - Pass Value To UserControl
 
         public ICommand OpenEViewCommand { get; set; }
 
@@ -174,7 +176,7 @@ namespace WpfSample01.A
 
         #endregion
         
-        #region HView - OnParentViewModelChanged
+        #region HView - OnParentViewModelChanged (Unfinished)
 
         public ICommand OpenHViewCommand { get; set; }
 
@@ -187,6 +189,25 @@ namespace WpfSample01.A
         }
 
         private bool OpenHViewCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+        
+        #region IView - Pass Value Between ViewModels
+
+        public ICommand OpenIViewCommand { get; set; }
+
+        private IView _iView;
+
+        private void OpenIViewCommandExecute()
+        {
+            _iView = new IView();
+            _iView.Show();
+        }
+
+        private bool OpenIViewCommandCanEnable()
         {
             return true;
         }

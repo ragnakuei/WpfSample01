@@ -16,11 +16,12 @@
         <Label Content="AView" />
         <Button Content="B - Single Button Window" Command="{Binding OpenBViewCommand}" />
         <Button Content="C - Dual Button Window" Command="{Binding OpenCViewCommand}" />
-        <Button Content="D - DragDrop Window" Command="{Binding OpenDViewCommand}" />
-        <Button Content="E - UserControl" Command="{Binding OpenEViewCommand}" />
+        <Button Content="D - DragDrop SVG" Command="{Binding OpenDViewCommand}" />
+        <Button Content="E - Pass Value To UserControl" Command="{Binding OpenEViewCommand}" />
         <Button Content="F - Custom Behavior" Command="{Binding OpenFViewCommand}" />
         <Button Content="G - OnInitialize" Command="{Binding OpenGViewCommand}" />
         <Button Content="H - OnParentViewModelChanged" Command="{Binding OpenHViewCommand}" />
+        <Button Content="I - Pass Value Between ViewModels" Command="{Binding OpenIViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

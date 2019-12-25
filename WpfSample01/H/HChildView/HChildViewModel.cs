@@ -27,7 +27,7 @@ namespace WpfSample01.H.HChildView
 
         private void OnLoadedCommandExecute()
         {
-            MessageBoxService.Show("OnLoad");
+            // MessageBoxService.Show("OnLoad");
         }
 
         private bool OnLoadedCommandCanEnable()

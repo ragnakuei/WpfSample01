@@ -13,18 +13,22 @@
         <local:HViewModel />
     </Window.DataContext>
     <dxmvvm:Interaction.Behaviors>
-        <dx:DXMessageBoxService/>
+        <dx:DXMessageBoxService />
         <dxmvvm:CurrentWindowService />
         <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding OnLoadedCommand}" />
     </dxmvvm:Interaction.Behaviors>
     <StackPanel Orientation="Vertical" Name="LayoutRoot">
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="MainView: "/>
-            <Button Content="Show Message" Command="{Binding ShowMessageCommand}" Width="208"/>
+            <TextBlock Text="MainView: " />
+            <Button Content="Show Message" Command="{Binding ShowMessageCommand}" Width="208" />
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="ChildView: " />
-            <hChildView:HChildView dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" Width="208" Height="259" />
+            <!-- 如果不給定 ParentViewModel HChildView 就拿不到 DXMessageBoxService -->
+            <hChildView:HChildView
+                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}"
+                Width="208"
+                Height="259" />
         </StackPanel>
     </StackPanel>
 </Window>

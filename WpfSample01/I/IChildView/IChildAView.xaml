@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
-        <local:IChildAViewModel />
+        <local:IChildViewModel />
     </UserControl.DataContext>
     <dxmvvm:Interaction.Behaviors>
         <dx:DXMessageBoxService/>
@@ -17,7 +17,5 @@
     <StackPanel>
         <Label Content="IChildA" />
         <TextBox Text="{Binding TextBoxValue, UpdateSourceTrigger=PropertyChanged}" />
-        <Button Content="Confirm" Command="{Binding ClickConfirmCommand}"/>
-        <Label Content="{Binding TextBoxValue}" />
     </StackPanel>
 </UserControl>

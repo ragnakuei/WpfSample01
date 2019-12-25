@@ -89,11 +89,10 @@
     <Compile Include="I\IChildView\IChildAView.xaml.cs">
       <DependentUpon>IChildAView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="I\IChildView\IChildAViewModel.cs" />
+    <Compile Include="I\IChildView\IChildViewModel.cs" />
     <Compile Include="I\IChildView\IChildBView.xaml.cs">
       <DependentUpon>IChildBView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="I\IChildView\IChildBViewModel.cs" />
     <Compile Include="I\IView.xaml.cs">
       <DependentUpon>IView.xaml</DependentUpon>
     </Compile>

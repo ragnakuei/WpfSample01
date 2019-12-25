@@ -5,29 +5,27 @@ using WpfSample01.Common;
 
 namespace WpfSample01.I.IChildView
 {
-    public class IChildBViewModel : ViewModelBase
+    public class IChildViewModel : ViewModelBase
     {
-        public IChildBViewModel()
+        public IChildViewModel()
         {
-            KeyUpCommand = new DelegateCommand(KeyUpExecutor);
         }
 
         private string _textBoxValue;
+
         public string TextBoxValue
         {
             get => _textBoxValue;
-            set => SetValue(ref _textBoxValue, value, nameof(TextBoxValue));
-        }
-        
-        public ICommand KeyUpCommand { get; }
+            set
+            {
+                SetValue(ref _textBoxValue, value, nameof(TextBoxValue));
 
-        private void KeyUpExecutor()
-        {
-            var newValueEventArgs = new NewValueEventArgs<string>
-                                    {
-                                        Value = TextBoxValue
-                                    };
-            OnTextBoxValueChange(newValueEventArgs);
+                if (_isCallTextBoxValueChangeEvent)
+                {
+                    var newValueEventArgs = new NewValueEventArgs<string> { Value = TextBoxValue };
+                    OnTextBoxValueChange(newValueEventArgs);    
+                }
+            }
         }
         
         public event EventHandler<NewValueEventArgs<string>> TextBoxValueChange;
@@ -36,19 +34,23 @@ namespace WpfSample01.I.IChildView
         {
             TextBoxValueChange?.Invoke(this, e);
         }
-        
+
         private IMessageBoxService MessageBoxService
         {
             get => GetService<IMessageBoxService>();
         }
+
+        private bool _isCallTextBoxValueChangeEvent = false;
         
-        protected override void OnParameterChanged(object parameter) {
+        protected override void OnParameterChanged(object parameter)
+        {
             base.OnParameterChanged(parameter);
-            if(parameter is string)
+            _isCallTextBoxValueChangeEvent = false;
+            if (parameter?.ToString() != null)
             {
-                // MessageBoxService.Show("IChildAViewModel: Parameter = " + parameter);
                 TextBoxValue = parameter.ToString();
             }
+            _isCallTextBoxValueChangeEvent = true;
         }
     }
 }

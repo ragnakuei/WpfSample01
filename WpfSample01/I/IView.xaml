@@ -28,16 +28,13 @@
         
         <StackPanel Grid.Row="0">
             <Label Content="TextBoxValue" />
-            <Label Content="{Binding TextBoxValue}" />
+            <TextBox Text="{Binding TextBoxValue}" />
         </StackPanel>
         
-        <iChildView:IChildAView Grid.Column="0" Grid.Row="1" 
-                                x:Name="ChildAView"
-                                 
-                                />
-        <iChildView:IChildBView Grid.Column="1" Grid.Row="1"
-                                x:Name="ChildBView"
-                                dxmvvm:ViewModelExtensions.Parameter="{Binding DataContext.TextBoxValue, ElementName=LayoutRoot}"/>
+        <iChildView:IChildAView x:Name="ChildAView" Grid.Column="0" Grid.Row="1"
+                                dxmvvm:ViewModelExtensions.Parameter="{Binding DataContext.TextBoxValue, ElementName=LayoutRoot }"/>
+        <iChildView:IChildBView x:Name="ChildBView" Grid.Column="1" Grid.Row="1" 
+                                dxmvvm:ViewModelExtensions.Parameter="{Binding DataContext.TextBoxValue, ElementName=LayoutRoot }"/>
         
         <!-- 指定 ColumnSpan - 要放在 Content 之後 -->
         <GridSplitter Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />

@@ -9,17 +9,13 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
-        <local:IChildBViewModel />
+        <local:IChildViewModel />
     </UserControl.DataContext>
     <dxmvvm:Interaction.Behaviors>
         <dx:DXMessageBoxService/>
     </dxmvvm:Interaction.Behaviors>
     <StackPanel>
         <Label Content="IChildB" />
-        <TextBox Text="{Binding TextBoxValue}">
-            <dxmvvm:Interaction.Behaviors>
-                <dxmvvm:EventToCommand EventName="KeyUp" Command="{Binding KeyUpCommand}" />
-            </dxmvvm:Interaction.Behaviors>
-        </TextBox>
+        <TextBox Text="{Binding TextBoxValue, UpdateSourceTrigger=PropertyChanged}" />
     </StackPanel>
 </UserControl>

@@ -27,7 +27,7 @@ namespace WpfSample01.I
             get => (_currentWindowService as CurrentWindowService)?.ActualWindow as IView;
         }
         
-        private string _textBoxValue;
+        private string _textBoxValue = "Initial Value";
         public string TextBoxValue
         {
             get => _textBoxValue;
@@ -39,17 +39,32 @@ namespace WpfSample01.I
             get => GetService<IMessageBoxService>();
         }
 
+        private IChildViewModel ChildViewModel
+        {
+            get => ViewClass.ChildAView.GetDataContext<IChildAView, IChildViewModel>();
+        }
+        
+        private IChildViewModel ChildBViewModel
+        {
+            get => ViewClass.ChildBView.GetDataContext<IChildBView, IChildViewModel>();
+        }
+        
         #region View Related Event
 
         public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {
-            // ViewClass.ChildAView.GetDataContext<IChildAView, IChildAViewModel>().TextBoxValueChange += ChildViewUpdateTextBoxValue;
-            ViewClass.ChildBView.GetDataContext<IChildBView, IChildBViewModel>().TextBoxValueChange += ChildViewUpdateTextBoxValue;
+            ChildViewModel.TextBoxValueChange += ChildAViewUpdateTextBoxValue;
+            ChildBViewModel.TextBoxValueChange += ChildBViewUpdateTextBoxValue;
         }
 
-        private void ChildViewUpdateTextBoxValue(object sender, NewValueEventArgs<string> e)
+        private void ChildAViewUpdateTextBoxValue(object sender, NewValueEventArgs<string> e)
+        {
+            TextBoxValue = e.Value;
+        }
+        
+        private void ChildBViewUpdateTextBoxValue(object sender, NewValueEventArgs<string> e)
         {
             TextBoxValue = e.Value;
         }

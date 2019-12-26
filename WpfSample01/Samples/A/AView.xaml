@@ -20,8 +20,9 @@
         <Button Content="E - Pass Value To UserControl" Command="{Binding OpenEViewCommand}" />
         <Button Content="F - Custom Behavior" Command="{Binding OpenFViewCommand}" />
         <Button Content="G - OnInitialize" Command="{Binding OpenGViewCommand}" />
-        <Button Content="H - OnParentViewModelChanged" Command="{Binding OpenHViewCommand}" />
+        <Button Content="H - ParentViewModel" Command="{Binding OpenHViewCommand}" />
         <Button Content="I - Pass Value Between ViewModels" Command="{Binding OpenIViewCommand}" />
+        <Button Content="J - OnParentViewModelChanged" Command="{Binding OpenJViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

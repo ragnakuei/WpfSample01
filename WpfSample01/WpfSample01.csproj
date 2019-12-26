@@ -55,6 +55,10 @@
     <Reference Include="DevExpress.Xpf.Ribbon.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Ribbon.v19.2.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
@@ -83,6 +87,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\NewValueEventArgs.cs" />
     <Compile Include="Helpers\DataContextHelper.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Samples\A\AView.xaml.cs">
       <DependentUpon>AView.xaml</DependentUpon>
     </Compile>
@@ -137,6 +142,14 @@
       <DependentUpon>IView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\I\IViewModel.cs" />
+    <Compile Include="Samples\J\JDetailView.xaml.cs">
+      <DependentUpon>JDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\J\JDetailViewModel.cs" />
+    <Compile Include="Samples\J\JMainView.xaml.cs">
+      <DependentUpon>JMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\J\JMainViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -178,6 +191,8 @@
     <Page Include="Samples\I\IChildView\IChildAView.xaml" />
     <Page Include="Samples\I\IChildView\IChildBView.xaml" />
     <Page Include="Samples\I\IView.xaml" />
+    <Page Include="Samples\J\JDetailView.xaml" />
+    <Page Include="Samples\J\JMainView.xaml" />
     <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
     <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>
@@ -221,9 +236,6 @@
     <Content Include="Images\Notebook 2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Samples" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

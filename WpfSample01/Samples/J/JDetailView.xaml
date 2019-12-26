@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="WpfSample01.Samples.J.JDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"       
+             xmlns:local="clr-namespace:WpfSample01.Samples.J"
+             mc:Ignorable="d"
+             DataContext="{dxmvvm:ViewModelSource Type=local:JDetailViewModel}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="Template">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0">Property</Label>
+                <Label Grid.Column="0" Grid.Row="1">Id</Label>
+                <Label Grid.Column="0" Grid.Row="2">Name</Label>
+                <Label Grid.Column="0" Grid.Row="3">Age</Label>
+                <Label Grid.Column="0" Grid.Row="4">HomeTown</Label>
+
+                <Label Grid.Column="1" Grid.Row="0" Content="Value" />
+                <Label Grid.Column="1" Grid.Row="1" Content="{Binding Id }" />
+                <Label Grid.Column="1" Grid.Row="2" Content="{Binding Name}" />
+                <Label Grid.Column="1" Grid.Row="3" Content="{Binding Age}" />
+                <Label Grid.Column="1" Grid.Row="4" Content="{Binding HomeTown}" />
+
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <ContentControl Content="{Binding SelectedPerson}" ContentTemplate="{DynamicResource Template}" />
+</UserControl>

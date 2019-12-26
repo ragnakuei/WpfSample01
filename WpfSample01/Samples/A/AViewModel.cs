@@ -11,6 +11,7 @@ using WpfSample01.Samples.F;
 using WpfSample01.Samples.G;
 using WpfSample01.Samples.H;
 using WpfSample01.Samples.I;
+using WpfSample01.Samples.J;
 
 namespace WpfSample01.Samples.A
 {
@@ -44,6 +45,7 @@ namespace WpfSample01.Samples.A
             OpenGViewCommand = new DelegateCommand(OpenGViewCommandExecute, OpenGViewCommandCanEnable);
             OpenHViewCommand = new DelegateCommand(OpenHViewCommandExecute, OpenHViewCommandCanEnable);
             OpenIViewCommand = new DelegateCommand(OpenIViewCommandExecute, OpenIViewCommandCanEnable);
+            OpenJViewCommand = new DelegateCommand(OpenJMainViewCommandExecute, OpenJMainViewCommandCanEnable);
         }
 
         #region BView - 在關閉時統一更新值
@@ -176,7 +178,7 @@ namespace WpfSample01.Samples.A
 
         #endregion
         
-        #region HView - OnParentViewModelChanged (Unfinished)
+        #region HView - ParentViewModel
 
         public ICommand OpenHViewCommand { get; set; }
 
@@ -208,6 +210,25 @@ namespace WpfSample01.Samples.A
         }
 
         private bool OpenIViewCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+        
+        #region JView - ParentViewModel
+
+        public ICommand OpenJViewCommand { get; set; }
+
+        private JMainView _jMainView;
+
+        private void OpenJMainViewCommandExecute()
+        {
+            _jMainView = new JMainView();
+            _jMainView.Show();
+        }
+
+        private bool OpenJMainViewCommandCanEnable()
         {
             return true;
         }

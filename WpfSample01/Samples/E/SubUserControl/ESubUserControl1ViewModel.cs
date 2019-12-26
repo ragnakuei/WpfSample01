@@ -1,14 +1,12 @@
 ﻿using System.Windows.Input;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.UI;
-using WpfSample01.Samples.I;
-using WpfSample01.ViewSample.ViewSampleChildView;
 
-namespace WpfSample01.ViewSample
+namespace WpfSample01.Samples.E.SubUserControl
 {
-    public class ViewSampleViewModel : ViewModelBase
+    public class ESubUserControl1ViewModel : ViewModelBase
     {
-        public ViewSampleViewModel()
+        public ESubUserControl1ViewModel()
         {
             OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
         }
@@ -18,14 +16,25 @@ namespace WpfSample01.ViewSample
             get => GetService<ICurrentWindowService>();
         }
 
-        public IView ViewClass
+        public EView ViewClass
         {
-            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as IView;
+            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as EView;
         }
 
-        #region View Related Event
+        #region Property
 
-        public ICommand OnLoadedCommand { get; }
+        private string _userName;
+        public string UserName
+        {
+            get => _userName;
+            set => SetValue(ref _userName, value);
+        }
+
+        #endregion
+
+        #region Event
+
+        public ICommand OnLoadedCommand { get; private set; }
 
         private void OnLoadedCommandExecute()
         {

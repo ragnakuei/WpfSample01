@@ -1,15 +1,13 @@
 ﻿using System.Windows.Input;
 using DevExpress.Mvvm;
-using DevExpress.Mvvm.UI;
-using WpfSample01.Samples.I;
-using WpfSample01.ViewSample.ViewSampleChildView;
 
-namespace WpfSample01.ViewSample
+namespace WpfSample01.Samples.H.HChildView
 {
-    public class ViewSampleViewModel : ViewModelBase
+    public class HChildViewModel : ViewModelBase
     {
-        public ViewSampleViewModel()
+        public HChildViewModel()
         {
+            ShowMessageCommand = new DelegateCommand(ShowMessage);
             OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
         }
 
@@ -18,18 +16,18 @@ namespace WpfSample01.ViewSample
             get => GetService<ICurrentWindowService>();
         }
 
-        public IView ViewClass
+        IMessageBoxService MessageBoxService
         {
-            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as IView;
+            get =>  GetService<IMessageBoxService>(ServiceSearchMode.PreferParents);
         }
-
+        
         #region View Related Event
 
         public ICommand OnLoadedCommand { get; }
 
         private void OnLoadedCommandExecute()
         {
-            // MessageBox.Show("OnLoad");
+            // MessageBoxService.Show("OnLoad");
         }
 
         private bool OnLoadedCommandCanEnable()
@@ -37,6 +35,13 @@ namespace WpfSample01.ViewSample
             return true;
         }
 
+        public ICommand ShowMessageCommand { get; }
+
+        void ShowMessage()
+        {
+            MessageBoxService.Show("This is ChildView");
+        }
+        
         #endregion
     }
 }

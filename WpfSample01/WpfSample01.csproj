@@ -81,22 +81,62 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="A\AView.xaml.cs">
-      <DependentUpon>AView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Common\NewValueEventArgs.cs" />
     <Compile Include="Helpers\DataContextHelper.cs" />
-    <Compile Include="I\IChildView\IChildAView.xaml.cs">
+    <Compile Include="Samples\A\AView.xaml.cs">
+      <DependentUpon>AView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\A\AViewModel.cs" />
+    <Compile Include="Samples\A\IAService.cs" />
+    <Compile Include="Samples\B\BView.xaml.cs">
+      <DependentUpon>BView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\B\BViewModel.cs" />
+    <Compile Include="Samples\B\IBService.cs" />
+    <Compile Include="Samples\C\CView.xaml.cs">
+      <DependentUpon>CView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\C\CViewModel.cs" />
+    <Compile Include="Samples\D\DView.xaml.cs">
+      <DependentUpon>DView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\D\DViewModel.cs" />
+    <Compile Include="Samples\E\EView.xaml.cs">
+      <DependentUpon>EView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\E\EViewModel.cs" />
+    <Compile Include="Samples\E\SubUserControl\ESubUserControl1.xaml.cs">
+      <DependentUpon>ESubUserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\E\SubUserControl\ESubUserControl1ViewModel.cs" />
+    <Compile Include="Samples\F\FView.xaml.cs">
+      <DependentUpon>FView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\F\FViewModel.cs" />
+    <Compile Include="Samples\F\MouseBehaviour.cs" />
+    <Compile Include="Samples\G\GView.xaml.cs">
+      <DependentUpon>GView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\G\GViewModel.cs" />
+    <Compile Include="Samples\H\HChildView\HChildView.xaml.cs">
+      <DependentUpon>HChildView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\H\HChildView\HChildViewModel.cs" />
+    <Compile Include="Samples\H\HView.xaml.cs">
+      <DependentUpon>HView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\H\HViewModel.cs" />
+    <Compile Include="Samples\I\IChildView\IChildAView.xaml.cs">
       <DependentUpon>IChildAView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="I\IChildView\IChildViewModel.cs" />
-    <Compile Include="I\IChildView\IChildBView.xaml.cs">
+    <Compile Include="Samples\I\IChildView\IChildBView.xaml.cs">
       <DependentUpon>IChildBView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="I\IView.xaml.cs">
+    <Compile Include="Samples\I\IChildView\IChildViewModel.cs" />
+    <Compile Include="Samples\I\IView.xaml.cs">
       <DependentUpon>IView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="I\IViewModel.cs" />
+    <Compile Include="Samples\I\IViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -105,28 +145,6 @@
     </Compile>
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleViewModel.cs" />
-    <Page Include="A\AView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="B\BView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="C\CView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="D\DView.xaml" />
-    <Page Include="E\EView.xaml" />
-    <Page Include="E\SubUserControl\ESubUserControl1.xaml" />
-    <Page Include="F\FView.xaml" />
-    <Page Include="G\GView.xaml" />
-    <Page Include="H\HView.xaml" />
-    <Page Include="H\HChildView\HChildView.xaml" />
-    <Page Include="I\IChildView\IChildAView.xaml" />
-    <Page Include="I\IChildView\IChildBView.xaml" />
-    <Page Include="I\IView.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,52 +153,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="A\AViewModel.cs" />
-    <Compile Include="A\IAService.cs" />
-    <Compile Include="B\BView.xaml.cs">
-      <DependentUpon>BView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="B\BViewModel.cs" />
-    <Compile Include="B\IBService.cs" />
     <Compile Include="CustomControls\DragDropSvgImage.cs" />
-    <Compile Include="C\CView.xaml.cs">
-      <DependentUpon>CView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="C\CViewModel.cs" />
-    <Compile Include="D\DView.xaml.cs">
-      <DependentUpon>DView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="D\DViewModel.cs" />
-    <Compile Include="E\EView.xaml.cs">
-      <DependentUpon>EView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="E\EViewModel.cs" />
-    <Compile Include="E\SubUserControl\ESubUserControl1.xaml.cs">
-      <DependentUpon>ESubUserControl1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="E\SubUserControl\ESubUserControl1ViewModel.cs" />
-    <Compile Include="F\MouseBehaviour.cs" />
-    <Compile Include="F\FView.xaml.cs">
-      <DependentUpon>FView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="F\FViewModel.cs" />
-    <Compile Include="G\GView.xaml.cs">
-      <DependentUpon>GView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="G\GViewModel.cs" />
     <Compile Include="Helpers\SvgHelper.cs" />
-    <Compile Include="H\HChildView\HChildView.xaml.cs">
-      <DependentUpon>HChildView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="H\HChildView\HChildViewModel.cs" />
-    <Compile Include="H\HView.xaml.cs">
-      <DependentUpon>HView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="H\HViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Samples\A\AView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\B\BView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\C\CView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\D\DView.xaml" />
+    <Page Include="Samples\E\EView.xaml" />
+    <Page Include="Samples\E\SubUserControl\ESubUserControl1.xaml" />
+    <Page Include="Samples\F\FView.xaml" />
+    <Page Include="Samples\G\GView.xaml" />
+    <Page Include="Samples\H\HChildView\HChildView.xaml" />
+    <Page Include="Samples\H\HView.xaml" />
+    <Page Include="Samples\I\IChildView\IChildAView.xaml" />
+    <Page Include="Samples\I\IChildView\IChildBView.xaml" />
+    <Page Include="Samples\I\IView.xaml" />
     <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
     <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>
@@ -224,6 +221,9 @@
     <Content Include="Images\Notebook 2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Samples" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

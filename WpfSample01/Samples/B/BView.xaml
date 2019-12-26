@@ -1,0 +1,24 @@
+﻿<dxr:DXRibbonWindow x:Class="WpfSample01.Samples.B.BView"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                    xmlns:b="clr-namespace:WpfSample01.Samples.B"
+                    Width="300"
+                    Height="300"
+                    mc:Ignorable="d">
+    <dxr:DXRibbonWindow.DataContext>
+        <b:BViewModel />
+    </dxr:DXRibbonWindow.DataContext>
+    <dxmvvm:Interaction.Behaviors>
+        <b:BService />
+        <dxmvvm:CurrentWindowService />
+    </dxmvvm:Interaction.Behaviors>
+    <StackPanel>
+        <Label Content="BView" />
+        <TextBox Text="{Binding LabelValue}" />
+        <Button Content="Close" Command="{Binding CloseWindow}" />
+    </StackPanel>
+</dxr:DXRibbonWindow>

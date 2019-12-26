@@ -1,14 +1,12 @@
 ﻿using System.Windows.Input;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.UI;
-using WpfSample01.Samples.I;
-using WpfSample01.ViewSample.ViewSampleChildView;
 
-namespace WpfSample01.ViewSample
+namespace WpfSample01.Samples.F
 {
-    public class ViewSampleViewModel : ViewModelBase
+    public class FViewModel : ViewModelBase
     {
-        public ViewSampleViewModel()
+        public FViewModel()
         {
             OnLoadedCommand = new DelegateCommand(OnLoadedCommandExecute, OnLoadedCommandCanEnable);
         }
@@ -18,9 +16,25 @@ namespace WpfSample01.ViewSample
             get => GetService<ICurrentWindowService>();
         }
 
-        public IView ViewClass
+        public FView ViewClass
         {
-            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as IView;
+            get => (_currentWindowService as CurrentWindowService)?.ActualWindow as FView;
+        }
+
+        private double _axisX;
+
+        public double AxisX
+        {
+            get => _axisX;
+            set => SetValue(ref _axisX, value);
+        }
+
+        private double _axisY;
+
+        public double AxisY
+        {
+            get => _axisY;
+            set => SetValue(ref _axisY, value);
         }
 
         #region View Related Event

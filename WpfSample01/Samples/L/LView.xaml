@@ -20,9 +20,8 @@
                     <dxb:BarButtonItem Content="Save and Close">
                         <dxmvvm:Interaction.Behaviors>
                             <dxmvvm:CompositeCommandBehavior>
-                                <dxmvvm:CommandItem Command="{Binding CloseCommand}"/>
                                 <dxmvvm:CommandItem Command="{Binding SaveCommand}"/>
-                                
+                                <dxmvvm:CommandItem Command="{Binding CloseCommand}"/>
                             </dxmvvm:CompositeCommandBehavior>
                         </dxmvvm:Interaction.Behaviors> 
                     </dxb:BarButtonItem>

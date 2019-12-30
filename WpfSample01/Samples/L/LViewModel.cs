@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Windows.Input;
-using DevExpress.Diagram.Core;
 using DevExpress.Mvvm;
 
 namespace WpfSample01.Samples.L

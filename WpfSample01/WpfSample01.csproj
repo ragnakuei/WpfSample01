@@ -51,6 +51,15 @@
     <Reference Include="DevExpress.Xpf.Diagram.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Diagram.v19.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DevExpress.Xpf.Grid.v19.2\v4.0_19.2.4.0__b88d1754d700e49a\DevExpress.Xpf.Grid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Grid.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.2.Extensions, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Grid.v19.2.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Xpf.LayoutControl.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Ribbon.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Ribbon.v19.2.dll</HintPath>
@@ -60,6 +69,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -150,6 +160,14 @@
       <DependentUpon>JMainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\J\JMainViewModel.cs" />
+    <Compile Include="Samples\K\FilterStringConverterExtension.cs" />
+    <Compile Include="Samples\K\FilterStringConverter.cs" />
+    <Compile Include="Samples\K\User.cs" />
+    <Compile Include="Samples\K\UserRole.cs" />
+    <Compile Include="Samples\K\KView.xaml.cs">
+      <DependentUpon>KView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\K\KViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -193,6 +211,7 @@
     <Page Include="Samples\I\IView.xaml" />
     <Page Include="Samples\J\JDetailView.xaml" />
     <Page Include="Samples\J\JMainView.xaml" />
+    <Page Include="Samples\K\KView.xaml" />
     <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
     <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>
@@ -234,6 +253,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Notebook 2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\K\Images\Admin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\K\Images\Moderator.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\K\Images\User.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

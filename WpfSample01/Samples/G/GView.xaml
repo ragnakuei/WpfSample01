@@ -16,6 +16,6 @@
     </dxmvvm:Interaction.Behaviors>
     <StackPanel>
         <Label>GView</Label>
-        <Label Content="{Binding LabelValue}" ></Label>
+        <Label Content="{Binding LabelValue}" />
     </StackPanel>
 </Window>

@@ -12,6 +12,7 @@ using WpfSample01.Samples.G;
 using WpfSample01.Samples.H;
 using WpfSample01.Samples.I;
 using WpfSample01.Samples.J;
+using WpfSample01.Samples.K;
 
 namespace WpfSample01.Samples.A
 {
@@ -46,6 +47,7 @@ namespace WpfSample01.Samples.A
             OpenHViewCommand = new DelegateCommand(OpenHViewCommandExecute, OpenHViewCommandCanEnable);
             OpenIViewCommand = new DelegateCommand(OpenIViewCommandExecute, OpenIViewCommandCanEnable);
             OpenJViewCommand = new DelegateCommand(OpenJMainViewCommandExecute, OpenJMainViewCommandCanEnable);
+            OpenKViewCommand = new DelegateCommand(OpenKViewCommandExecute, OpenKViewCommandCanEnable);
         }
 
         #region BView - 在關閉時統一更新值
@@ -229,6 +231,25 @@ namespace WpfSample01.Samples.A
         }
 
         private bool OpenJMainViewCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+        
+        #region KView - EnumItemsSourceBehavior
+
+        public ICommand OpenKViewCommand { get; set; }
+
+        private KView _kView;
+
+        private void OpenKViewCommandExecute()
+        {
+            _kView = new KView();
+            _kView.Show();
+        }
+
+        private bool OpenKViewCommandCanEnable()
         {
             return true;
         }

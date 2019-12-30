@@ -24,6 +24,7 @@
         <Button Content="I - Pass Value Between ViewModels" Command="{Binding OpenIViewCommand}" />
         <Button Content="J - OnParentViewModelChanged" Command="{Binding OpenJViewCommand}" />
         <Button Content="K - EnumItemsSourceBehavior" Command="{Binding OpenKViewCommand}" />
+        <Button Content="L - CompositeCommandBehavior" Command="{Binding OpenLViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

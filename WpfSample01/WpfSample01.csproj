@@ -168,6 +168,10 @@
       <DependentUpon>KView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\K\KViewModel.cs" />
+    <Compile Include="Samples\L\LView.xaml.cs">
+      <DependentUpon>LView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\L\LViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -212,6 +216,7 @@
     <Page Include="Samples\J\JDetailView.xaml" />
     <Page Include="Samples\J\JMainView.xaml" />
     <Page Include="Samples\K\KView.xaml" />
+    <Page Include="Samples\L\LView.xaml" />
     <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
     <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>

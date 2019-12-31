@@ -172,6 +172,10 @@
       <DependentUpon>LView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\L\LViewModel.cs" />
+    <Compile Include="Samples\M\MView.xaml.cs">
+      <DependentUpon>MView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\M\MViewModel.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -217,6 +221,7 @@
     <Page Include="Samples\J\JMainView.xaml" />
     <Page Include="Samples\K\KView.xaml" />
     <Page Include="Samples\L\LView.xaml" />
+    <Page Include="Samples\M\MView.xaml" />
     <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
     <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>

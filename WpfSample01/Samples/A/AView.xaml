@@ -25,6 +25,7 @@
         <Button Content="J - OnParentViewModelChanged" Command="{Binding OpenJViewCommand}" />
         <Button Content="K - EnumItemsSourceBehavior" Command="{Binding OpenKViewCommand}" />
         <Button Content="L - CompositeCommandBehavior" Command="{Binding OpenLViewCommand}" />
+        <Button Content="M - FunctionBindingBehavior" Command="{Binding OpenMViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

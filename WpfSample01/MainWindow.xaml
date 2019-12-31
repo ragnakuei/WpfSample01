@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:a="clr-namespace:WpfSample01.Samples.A"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="500">
+        Title="MainWindow" Height="500" Width="300">
     <Grid>
         <a:AView />
     </Grid>

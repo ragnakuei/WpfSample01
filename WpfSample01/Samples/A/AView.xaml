@@ -26,6 +26,8 @@
         <Button Content="K - EnumItemsSourceBehavior" Command="{Binding OpenKViewCommand}" />
         <Button Content="L - CompositeCommandBehavior" Command="{Binding OpenLViewCommand}" />
         <Button Content="M - FunctionBindingBehavior" Command="{Binding OpenMViewCommand}" />
+        <Button Content="N - MethodToCommandBehavior" Command="{Binding OpenNViewCommand}" />
+        <Button Content="O - DockingDocumentUIService" Command="{Binding OpenOViewCommand}" />
         <Label Content="{Binding LabelResult}" />
     </StackPanel>
 </UserControl>

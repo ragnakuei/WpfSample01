@@ -51,6 +51,9 @@
     <Reference Include="DevExpress.Xpf.Diagram.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Diagram.v19.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpf.Docking.v19.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Xpf.Grid.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DevExpress.Xpf.Grid.v19.2\v4.0_19.2.4.0__b88d1754d700e49a\DevExpress.Xpf.Grid.v19.2.dll</HintPath>
     </Reference>
@@ -176,6 +179,18 @@
       <DependentUpon>MView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Samples\M\MViewModel.cs" />
+    <Compile Include="Samples\N\NView.xaml.cs">
+      <DependentUpon>NView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\O\OMainView.xaml.cs">
+      <DependentUpon>OMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\O\OMainViewModel.cs" />
+    <Compile Include="Samples\O\OTabContentView.xaml.cs">
+      <DependentUpon>OTabContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\O\OTabContentViewModel.cs" />
+    <Compile Include="Samples\O\ViewModelState.cs" />
     <Compile Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml.cs">
       <DependentUpon>HView.xaml</DependentUpon>
     </Compile>
@@ -222,6 +237,9 @@
     <Page Include="Samples\K\KView.xaml" />
     <Page Include="Samples\L\LView.xaml" />
     <Page Include="Samples\M\MView.xaml" />
+    <Page Include="Samples\N\NView.xaml" />
+    <Page Include="Samples\O\OMainView.xaml" />
+    <Page Include="Samples\O\OTabContentView.xaml" />
     <Page Include="ViewSample\ViewSampleChildView\ViewSampleChildView.xaml" />
     <Page Include="ViewSample\ViewSampleView.xaml" />
   </ItemGroup>

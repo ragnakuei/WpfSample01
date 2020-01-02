@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="WpfSample01.Samples.O.OTabContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfSample01.Samples.O"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             mc:Ignorable="d"
+             DataContext="{dxmvvm:ViewModelSource Type=local:OTabContentViewModel}"
+             d:DesignHeight="300" d:DesignWidth="300">
+     <DockPanel>
+        <dxb:ToolBarControl DockPanel.Dock="Top">
+            <dxb:ToolBarControl.Items>
+                <dxb:BarButtonItem Content="New Sub Document" BarItemDisplayMode="ContentAndGlyph" Glyph="{dx:DXImage Image=New_16x16.png}"
+                                   Command="{Binding OpenChildDocumentCommand}" />
+                <dxb:BarEditItem Content="Document state: " EditValue="{Binding State.State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+                <dxb:BarEditItem Content="Can be Closed" EditValue="{Binding CanBeClosed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:CheckEditSettings />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+            </dxb:ToolBarControl.Items>
+        </dxb:ToolBarControl>
+
+        <dxb:StatusBarControl DockPanel.Dock="Bottom">
+            <dxb:StatusBarControl.Items>
+                <dxb:BarStaticItem Content="{Binding ParentViewModel.State.State}">
+                    <dxb:BarStaticItem.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Parent's state: " />
+                                <TextBlock Text="{Binding}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxb:BarStaticItem.ContentTemplate>
+                </dxb:BarStaticItem>
+            </dxb:StatusBarControl.Items>
+        </dxb:StatusBarControl>
+
+        <Border>
+            <StackPanel>
+                <TextBlock Text="Document" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="32" />
+            </StackPanel>
+        </Border>
+    </DockPanel>
+</UserControl>

@@ -15,6 +15,8 @@ using WpfSample01.Samples.J;
 using WpfSample01.Samples.K;
 using WpfSample01.Samples.L;
 using WpfSample01.Samples.M;
+using WpfSample01.Samples.N;
+using WpfSample01.Samples.O;
 
 namespace WpfSample01.Samples.A
 {
@@ -52,6 +54,8 @@ namespace WpfSample01.Samples.A
             OpenKViewCommand = new DelegateCommand(OpenKViewCommandExecute, OpenKViewCommandCanEnable);
             OpenLViewCommand = new DelegateCommand(OpenLViewCommandExecute, OpenLViewCommandCanEnable);
             OpenMViewCommand = new DelegateCommand(OpenMViewCommandExecute, OpenMViewCommandCanEnable);
+            OpenNViewCommand = new DelegateCommand(OpenNViewCommandExecute, OpenNViewCommandCanEnable);
+            OpenOViewCommand = new DelegateCommand(OpenOViewCommandExecute, OpenOViewCommandCanEnable);
         }
 
         #region BView - 在關閉時統一更新值
@@ -292,6 +296,44 @@ namespace WpfSample01.Samples.A
         }
 
         private bool OpenMViewCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+        
+        #region NView - EnumItemsSourceBehavior
+
+        public ICommand OpenNViewCommand { get; set; }
+
+        private NView _nView;
+
+        private void OpenNViewCommandExecute()
+        {
+            _nView = new NView();
+            _nView.Show();
+        }
+
+        private bool OpenNViewCommandCanEnable()
+        {
+            return true;
+        }
+
+        #endregion
+        
+        #region OView - DockingDocumentUIService
+
+        public ICommand OpenOViewCommand { get; set; }
+
+        private OMainView _oView;
+
+        private void OpenOViewCommandExecute()
+        {
+            _oView = new OMainView();
+            _oView.Show();
+        }
+
+        private bool OpenOViewCommandCanEnable()
         {
             return true;
         }

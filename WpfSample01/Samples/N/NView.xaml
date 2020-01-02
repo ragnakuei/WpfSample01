@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfSample01.Samples.N.NView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfSample01.Samples.N"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        mc:Ignorable="d"
+        Title="NView" Height="450" Width="800">
+    <StackPanel>
+<TextBox Name="tbx" Text="01234567890" />
+<Button Content="Select Text">
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:MethodToCommandBehavior Source="{Binding ElementName=tbx}" 
+                                        Method="Select"
+                                        Arg1="2"
+                                        Arg2="4"
+                                        >        
+        </dxmvvm:MethodToCommandBehavior>
+    </dxmvvm:Interaction.Behaviors>            
+</Button>
+<Button Content="Focus Textbox">
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:MethodToCommandBehavior Source="{Binding ElementName=tbx}" 
+                                        Method="Focus"
+        >        
+        </dxmvvm:MethodToCommandBehavior>
+    </dxmvvm:Interaction.Behaviors>            
+</Button>
+    </StackPanel>
+</Window>
